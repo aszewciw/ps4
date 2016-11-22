@@ -12,4 +12,4 @@ cd $PBS_O_WORKDIR
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -ksp_monitor -ksp_log -log_summary
 
-aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_gmres_restart 15 -ksp_view -log_summary -ksp_monitor
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_gmres_restart 30 -ksp_view -log_summary -ksp_monitor
