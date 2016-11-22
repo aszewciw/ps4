@@ -15,4 +15,8 @@ cd $PBS_O_WORKDIR
 # Different restart values for ksp
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_gmres_restart 200 -log_info -ksp_view -log_summary -ksp_monitor
 
-aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type PCASM -sub_pc_type PCILU -pc_asm_overlap 0
+# Additive Schwarz, different overlap layers
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type PCASM -sub_pc_type PCILU -pc_asm_overlap 3
+
+# back to defaults, different levels of fill
+# aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_factor_levels 0
