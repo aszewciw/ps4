@@ -16,7 +16,7 @@ cd $PBS_O_WORKDIR
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_gmres_restart 200 -log_info -ksp_view -log_summary -ksp_monitor
 
 # Additive Schwarz, different overlap layers
-aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type PCASM -sub_pc_type PCILU -pc_asm_overlap 3
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type asm -sub_pc_type ilu -pc_asm_overlap 0
 
 # back to defaults, different levels of fill
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_factor_levels 0
