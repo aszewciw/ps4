@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -A bagx
+#PBS -l nodes=2:ppn=32:xe
+#PBS -l walltime=00:10:00
+#PBS -N ps4
+#PBS -e $PBS_JOBID.err
+#PBS -o $PBS_JOBID.out
+
+cd $PBS_O_WORKDIR
+
+# Different fill icc
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -ksp_type preonly -pc_type lu -pc_factor_mat_ordering_type nd
