@@ -21,7 +21,7 @@ cd $PBS_O_WORKDIR
 # aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type asm -sub_pc_type ilu -sub_pc_factor_levels 3
 
 # Combo of fill and overlap
-aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type asm -sub_pc_type ilu -sub_pc_factor_levels 3 -pc_asm_overlap 0
+# aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -pc_type asm -sub_pc_type ilu -sub_pc_factor_levels 3 -pc_asm_overlap 0
 
 # Different ksp: BiCG-Stabilized
-# aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -ksp_monitor -ksp_log -log_summary -ksp_type bcgs -pc_type asm -sub_pc_type ilu -pc_asm_overlap 0
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -ksp_monitor -ksp_log -log_summary -ksp_type bcgs -pc_type asm -sub_pc_type ilu -pc_asm_overlap 0
