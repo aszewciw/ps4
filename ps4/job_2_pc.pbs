@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#PBS -A bagx
+#PBS -l nodes=2:ppn=32:xe
+#PBS -l walltime=00:10:00
+#PBS -N ps4
+#PBS -e $PBS_JOBID.err
+#PBS -o $PBS_JOBID.out
+
+cd $PBS_O_WORKDIR
+
+aprun -n 16 -N 8 ./ps4.out -da_refine 0 -ksp_view -log_summary -ksp_monitor -ksp_type cg -pc_type jacobi
