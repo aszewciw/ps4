@@ -9,4 +9,4 @@
 
 cd $PBS_O_WORKDIR
 
-aprun -n 64 -N 32 ./ps4.out -da_refine 4 -ksp_view -log_summary -ksp_monitor -ksp_type cg -pc_type none
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -ksp_type cg -pc_type none
