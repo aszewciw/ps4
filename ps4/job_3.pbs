@@ -9,5 +9,11 @@
 
 cd $PBS_O_WORKDIR
 
-# cg and gamg
-aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -ksp_monitor -ksp_log -log_summary -ksp_type cg -pc_type hypre
+# cg and gamg/hypre
+# aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -ksp_monitor -ksp_log -log_summary -ksp_type cg -pc_type hypre
+
+
+# part b
+aprun -n 64 -N 32 ./ps4.out -da_refine 6 -ksp_view -log_summary -ksp_monitor -ksp_type cg -pc_type jacobi -sub_pc_type icc
+
+# aprun -n 64 -N 32 ./ps4.out -da_refine 7 -ksp_view -ksp_monitor -ksp_log -log_summary -ksp_type cg -pc_type hypre
